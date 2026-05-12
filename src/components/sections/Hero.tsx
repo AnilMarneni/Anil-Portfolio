@@ -110,7 +110,7 @@ export function Hero() {
         {isBountyOpen && <BountyPoster isOpen={isBountyOpen} onClose={() => setIsBountyOpen(false)} />}
 
         {/* Right Content - Visual */}
-        <div className="lg:col-span-5 relative hidden lg:block h-[600px]">
+        <div className="lg:col-span-5 relative h-[400px] sm:h-[500px] lg:h-[600px] mt-8 lg:mt-0">
           <motion.div
             {...ANIMATION_VARIANTS.scaleUp}
             className="relative w-full h-full"
@@ -118,7 +118,7 @@ export function Hero() {
             {/* Editorial Portrait Container */}
             <div 
                 onClick={handleProfileTap}
-                className={`absolute inset-0 rounded-[3rem] overflow-hidden bg-foreground/5 border border-foreground/10 group shadow-2xl cursor-pointer transition-all duration-500 ${isOverrideActive ? "ring-4 ring-accent/20" : ""}`}
+                className={`absolute inset-0 rounded-[2.5rem] lg:rounded-[3rem] overflow-hidden bg-foreground/5 border border-foreground/10 group shadow-2xl cursor-pointer transition-all duration-500 ${isOverrideActive ? "ring-4 ring-accent/20" : ""}`}
             >
                 <Image
                     src="/images/profile/anil-hero.webp.jpeg"
@@ -138,7 +138,7 @@ export function Hero() {
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.5, duration: 0.8 }}
-              className="absolute -bottom-10 -right-10 p-6 glass rounded-2xl border-foreground/10 shadow-2xl max-w-[240px] z-20"
+              className="absolute -bottom-6 -right-4 sm:-bottom-10 sm:-right-10 p-4 sm:p-6 glass rounded-2xl border-foreground/10 shadow-2xl max-w-[200px] sm:max-w-[240px] z-20"
             >
               <div className="flex items-center gap-3 mb-4">
                 <div className={`w-2 h-2 rounded-full animate-pulse ${isOverrideActive ? "bg-accent" : "bg-green-500"}`} />
