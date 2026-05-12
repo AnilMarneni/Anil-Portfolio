@@ -1,0 +1,296 @@
+import { PortfolioData } from "@/types";
+
+export const portfolioData: PortfolioData = {
+  name: "Marneni Anil Chiranjeeth",
+  role: "Software Development Engineer",
+  status: "College Student",
+  college: "Vignan Institute of Technology and Science",
+  graduationYear: "2027",
+  location: "Hyderabad, India",
+  contact: {
+    email: "anilmarneni30@gmail.com",
+    github: "https://github.com/AnilMarneni",
+    linkedin: "https://www.linkedin.com/in/anil-marneni",
+  },
+  codingProfiles: {
+    leetcode: "https://leetcode.com/u/AnilMarneni/",
+    codeforces: "https://codeforces.com/profile/AnilMarneni",
+    hackerrank: "https://www.hackerrank.com/anilmarneni30",
+  },
+  leetcodeStats: {
+    solved: 215,
+    easy: 126,
+    medium: 77,
+    hard: 12,
+    ranking: "708,860",
+    contestRating: 1488,
+    globalRanking: "416,845 / 874,449",
+    topPercentage: "48.13%",
+    acceptanceRate: "76.16%",
+    submissions: 339,
+    activeDays: 80,
+    maxStreak: 30,
+    recentSubmissions: [
+      "Separate the Digits in an Array",
+      "Maximum Number of Jumps to Reach the Last Index",
+      "Cyclically Rotating a Grid",
+      "Minimum Jumps to Reach End via Prime Teleportation",
+      "Rotate List"
+    ],
+    recentBadge: "50 Days Badge 2026",
+  },
+  skills: [
+    {
+      title: "Programming Languages",
+      skills: ["C++", "Java", "Python", "JavaScript", "TypeScript"],
+    },
+    {
+      title: "Backend & Distributed Systems",
+      skills: ["Node.js", "Express.js", "Spring Boot", "FastAPI", "Kafka", "WebSockets", "REST APIs"],
+    },
+    {
+      title: "Frontend",
+      skills: ["React.js", "Next.js", "HTML5", "CSS3", "Tailwind CSS"],
+    },
+    {
+      title: "Databases",
+      skills: ["PostgreSQL", "MongoDB", "Redis"],
+    },
+    {
+      title: "Tools & Infrastructure",
+      skills: ["Docker", "Git", "GitHub Actions", "Linux"],
+    },
+    {
+      title: "CS Fundamentals",
+      skills: ["Data Structures & Algorithms", "Object-Oriented Programming", "DBMS", "Operating Systems", "Computer Networks", "System Design"],
+    },
+  ],
+  projects: [
+    {
+      id: "code-execution-engine",
+      title: "Distributed Code Execution Engine",
+      description: "A secure, high-volume system for running and evaluating code in isolated environments.",
+      longDescription: "I built this to handle thousands of code submissions across multiple languages. It uses Docker for secure sandboxing and Kafka to manage task queues, ensuring the system stays reliable even under heavy load.",
+      github: "https://github.com/AnilMarneni/Distributed-Code-Execution-Engine",
+      tags: ["Distributed Systems", "Docker", "Kafka", "Redis", "C++"],
+      category: "distributed-systems",
+      architecture: {
+        description: "Event-driven architecture using Kafka for task distribution and Docker for secure isolation.",
+        nodes: [
+          { id: "api", label: "API Gateway", type: "service" },
+          { id: "kafka", label: "Kafka Cluster", type: "message-broker" },
+          { id: "worker-pool", label: "Worker Pool", type: "compute" },
+          { id: "redis", label: "Redis (Caching)", type: "storage" },
+        ],
+        connections: [
+          { from: "api", to: "kafka", label: "Enqueue Task" },
+          { from: "kafka", to: "worker-pool", label: "Process Task" },
+          { from: "worker-pool", to: "redis", label: "Cache Result" },
+        ],
+      },
+      poster: "/images/projects/distributed-code-engine.webp.png",
+      scalabilityInsights: [
+        "Dynamic worker auto-scaling based on queue depth",
+        "Sub-100ms task distribution latency",
+        "Multi-region data replication for result caching",
+      ],
+      highlights: [
+        "Secure Docker-based sandboxing",
+        "Kafka-driven asynchronous processing",
+        "Multi-language support (C++, Java, Python)",
+        "Real-time execution telemetry",
+      ],
+      challenges: [
+        "Ensuring strict resource isolation and security",
+        "Managing high-concurrency event processing",
+        "Optimizing worker startup time and latency",
+      ],
+    },
+    {
+      id: "fraud-detection",
+      title: "Real-Time Fraud Detection System",
+      description: "An AI-powered system that flags fraudulent transactions in under 200ms.",
+      longDescription: "This system monitors financial transactions as they happen, using machine learning to catch anomalies instantly. I focused on making the detection fast enough to be practically invisible to the end user.",
+      github: "https://github.com/AnilMarneni/Real-Time-Transaction-Monitoring-Fraud-Detection-System",
+      tags: ["AI", "Real-Time Systems", "FastAPI", "Kafka", "Scikit-Learn"],
+      category: "ai",
+      architecture: {
+        description: "Intelligence pipeline with real-time stream processing and automated risk scoring.",
+        nodes: [
+          { id: "txn-stream", label: "Transaction Stream", type: "stream" },
+          { id: "kafka", label: "Kafka", type: "message-broker" },
+          { id: "ml-engine", label: "ML Scoring Engine", type: "ai-model" },
+          { id: "dashboard", label: "Ops Dashboard", type: "ui" },
+        ],
+        connections: [
+          { from: "txn-stream", to: "kafka", label: "Ingest" },
+          { from: "kafka", to: "ml-engine", label: "Scoring" },
+          { from: "ml-engine", to: "dashboard", label: "Alert" },
+        ],
+      },
+      poster: "/images/projects/fraud-detection-system.webp.png",
+      scalabilityInsights: [
+        "Distributed ML inference across multiple nodes",
+        "High-throughput stream ingestion using Kafka partitions",
+        "Real-time feature engineering pipeline",
+      ],
+      highlights: [
+        "Real-time anomaly detection with ML",
+        "Low-latency scoring pipeline",
+        "Interactive telemetry dashboard",
+        "Scalable event-driven backbone",
+      ],
+      challenges: [
+        "Handling massive bursts of transaction data",
+        "Minimizing false positives in anomaly detection",
+        "Ensuring data consistency across distributed nodes",
+      ],
+    },
+    {
+      id: "realtime-chat",
+      title: "Scalable Real-Time Chat",
+      description: "A messaging infrastructure built to handle thousands of concurrent users.",
+      longDescription: "I engineered this to solve the challenges of live communication at scale. It uses WebSockets for real-time delivery and Redis Pub/Sub to sync messages across multiple server nodes seamlessly.",
+      github: "https://github.com/AnilMarneni/RealTime-Chat-System",
+      tags: ["WebSockets", "Redis", "Node.js", "React", "Kafka"],
+      category: "real-time",
+      architecture: {
+        description: "WebSocket-based architecture with Redis Pub/Sub for cross-node communication.",
+        nodes: [
+          { id: "client", label: "Web Clients", type: "user" },
+          { id: "socket-server", label: "Socket Server Cluster", type: "service" },
+          { id: "redis-pubsub", label: "Redis Pub/Sub", type: "cache" },
+          { id: "kafka-db", label: "Kafka / DB", type: "persistence" },
+        ],
+        connections: [
+          { from: "client", to: "socket-server", label: "WS Connection" },
+          { from: "socket-server", to: "redis-pubsub", label: "Broadcast" },
+          { from: "socket-server", to: "kafka-db", label: "Persist" },
+        ],
+      },
+      poster: "/images/projects/realtime-chat-system.webp.png",
+      scalabilityInsights: [
+        "Horizontal scaling of socket servers with Redis adapter",
+        "Efficient presence tracking with Redis bitsets",
+        "Message ordering guarantees via Kafka partitioning",
+      ],
+      highlights: [
+        "Horizontal scaling with Redis",
+        "Persistent message history with Kafka",
+        "Presence tracking and typing indicators",
+        "Optimized message delivery latency",
+      ],
+      challenges: [
+        "Managing sticky sessions and connection state",
+        "Solving the C10k problem for concurrent connections",
+        "Ensuring message delivery order in a distributed environment",
+      ],
+    },
+    {
+      id: "smart-task-manager",
+      title: "AI Task Automation Manager",
+      description: "Intelligent workflow automation using LLMs for natural task parsing.",
+      longDescription: "This project uses AI to understand and organize complex tasks automatically. I built an asynchronous pipeline that takes natural language input and turns it into structured, prioritized workflows.",
+      github: "https://github.com/AnilMarneni/Smart-Task-Manager",
+      tags: ["AI", "Next.js", "Redis Queues", "LLM Integration"],
+      category: "ai",
+      architecture: {
+        description: "AI-enhanced task pipeline with asynchronous background processing.",
+        nodes: [
+          { id: "ui", label: "Frontend", type: "ui" },
+          { id: "api", label: "Task API", type: "service" },
+          { id: "llm-processor", label: "LLM Worker", type: "compute" },
+          { id: "redis-q", label: "Redis Queue", type: "queue" },
+        ],
+        connections: [
+          { from: "ui", to: "api", label: "Submit Task" },
+          { from: "api", to: "redis-q", label: "Enqueue" },
+          { from: "redis-q", to: "llm-processor", label: "AI Parsing" },
+        ],
+      },
+      poster: "/images/projects/smart-task-manager.webp.png",
+      scalabilityInsights: [
+        "Asynchronous task processing to handle LLM latency",
+        "Priority-based queue management for critical workflows",
+        "Scalable AI worker pool for parallel task parsing",
+      ],
+      highlights: [
+        "NLP-based task extraction",
+        "Automated prioritization engine",
+        "Asynchronous task lifecycle management",
+        "Rich dependency visualization",
+      ],
+      challenges: [
+        "Handling LLM latency and rate limits",
+        "Designing intuitive task relationship graphs",
+        "Maintaining performance with large task datasets",
+      ],
+    },
+    {
+      id: "event-processing",
+      title: "Real-Time Event Engine",
+      description: "A reliable background processing system designed for fault tolerance.",
+      longDescription: "I built this engine to handle millions of background events without losing data. It uses Redis-backed queues and a smart retry logic to ensure every event is processed exactly as intended.",
+      github: "https://github.com/AnilMarneni/Real-Time-Event-Processing-System",
+      tags: ["BullMQ", "Redis", "Backend", "Node.js"],
+      category: "backend",
+      architecture: {
+        description: "Reliable event pipeline with built-in retry and monitoring logic.",
+        nodes: [
+          { id: "event-source", label: "Event Producer", type: "service" },
+          { id: "bullmq", label: "BullMQ / Redis", type: "queue" },
+          { id: "worker", label: "Event Consumers", type: "compute" },
+          { id: "monitor", label: "Dashboard", type: "ui" },
+        ],
+        connections: [
+          { from: "event-source", to: "bullmq", label: "Publish" },
+          { from: "bullmq", to: "worker", label: "Process" },
+          { from: "worker", to: "monitor", label: "Telemetry" },
+        ],
+      },
+      poster: "/images/projects/realtime-event-processing.webp.png",
+      scalabilityInsights: [
+        "BullMQ-based task distribution with low-overhead",
+        "Efficient retry strategies with exponential backoff",
+        "Real-time monitoring of queue health and throughput",
+      ],
+      highlights: [
+        "Idempotent event processing",
+        "Exponential backoff retry logic",
+        "Real-time processing metrics",
+        "Highly scalable consumer workers",
+      ],
+      challenges: [
+        "Avoiding duplicate processing in distributed environments",
+        "Managing queue backpressure during peaks",
+        "Ensuring observability across the event lifecycle",
+      ],
+    },
+  ],
+  experience: [
+    {
+      company: "Infosys Springboard",
+      role: "AIML Intern",
+      period: "Dec 2025 – Feb 2026",
+      description: "Built and optimized machine learning pipelines for NLP-based tasks.",
+      achievements: [
+        "Developed machine learning pipelines for NLP tasks on 50K+ records using Python and AI/ML workflows.",
+        "Improved model accuracy by 18–25% through advanced data preprocessing and hyperparameter tuning.",
+        "Reduced data processing time by nearly 30% by optimizing model inference and transformation workflows.",
+        "Designed scalable end-to-end ML pipelines focused on reliability and efficient deployment.",
+      ],
+    },
+    {
+      company: "Rocket.Chat",
+      role: "Open Source Contributor",
+      period: "May 2025 - Aug 2025",
+      description: "Contributed to one of the world's leading open-source communication platforms.",
+      achievements: [
+        "Implemented new features and fixed critical bugs in the core platform.",
+        "Collaborated with senior engineers in a large-scale production codebase.",
+        "Gained deep insights into real-time communication architectures.",
+      ],
+    },
+  ],
+};
+

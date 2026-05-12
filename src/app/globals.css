@@ -1,0 +1,191 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: hsl(20 15% 97%);
+  --color-foreground: hsl(20 5% 10%);
+  
+  --color-card: hsl(20 15% 99%);
+  --color-card-foreground: hsl(20 5% 10%);
+  
+  --color-primary: hsl(20 5% 15%);
+  --color-primary-foreground: hsl(20 15% 97%);
+  
+  --color-secondary: hsl(20 10% 90%);
+  --color-secondary-foreground: hsl(20 5% 15%);
+  
+  --color-muted: hsl(20 10% 92%);
+  --color-muted-foreground: hsl(20 5% 45%);
+  
+  --color-accent: hsl(35 60% 45%);
+  --color-accent-foreground: hsl(20 15% 97%);
+  
+  --color-border: hsl(20 10% 88%);
+  --radius-radius: 0.75rem;
+
+  --font-serif: var(--font-serif);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+}
+
+.dark {
+  --color-background: hsl(240 10% 4%);
+  --color-foreground: hsl(0 0% 95%);
+  
+  --color-card: hsl(240 10% 6%);
+  --color-card-foreground: hsl(0 0% 95%);
+  
+  --color-primary: hsl(0 0% 98%);
+  --color-primary-foreground: hsl(240 10% 4%);
+  
+  --color-secondary: hsl(240 10% 12%);
+  --color-secondary-foreground: hsl(0 0% 98%);
+  
+  --color-muted: hsl(240 10% 12%);
+  --color-muted-foreground: hsl(240 5% 65%);
+  
+  --color-accent: hsl(210 100% 60%);
+  --color-accent-foreground: hsl(0 0% 98%);
+  
+  --color-border: hsl(240 10% 15%);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    @apply selection:bg-accent/30 overflow-x-hidden antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+.glass {
+  background-color: color-mix(in srgb, var(--color-background) 60%, transparent);
+  backdrop-filter: blur(12px);
+  border: 1px solid color-mix(in srgb, var(--color-foreground) 5%, transparent);
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--color-muted-foreground) 20%, transparent);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: color-mix(in srgb, var(--color-muted-foreground) 40%, transparent);
+}
+
+/* Layout Utilities */
+.container-px {
+  @apply px-6 md:px-12 lg:px-24;
+}
+
+/* Typography Scale */
+.h1 { @apply text-5xl md:text-7xl lg:text-8xl font-serif tracking-tight leading-[1.1]; }
+.h2 { @apply text-4xl md:text-5xl lg:text-6xl font-serif tracking-tight leading-[1.1]; }
+.h3 { @apply text-2xl md:text-3xl font-serif tracking-tight; }
+.ui-label { @apply text-xs font-mono uppercase tracking-widest text-muted-foreground; }
+ 
+/* Grid Background */
+.grid-bg {
+  background-image: radial-gradient(circle at 1px 1px, color-mix(in srgb, var(--color-foreground) 10%, transparent) 1px, transparent 0);
+  background-size: 40px 40px;
+}
+ 
+@keyframes scan {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(400%); }
+}
+/* Print Optimization */
+@media print {
+  @page {
+    margin: 2cm;
+    size: A4;
+  }
+
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 11pt !important;
+  }
+
+  .dark {
+    background: white !important;
+    color: black !important;
+  }
+
+  /* Hide Non-Essential UI */
+  nav, 
+  footer, 
+  button, 
+  .system-override-overlay, 
+  .scanning-line,
+  .no-print {
+    display: none !important;
+  }
+
+  /* Section Breaks */
+  section {
+    page-break-inside: avoid;
+    margin-bottom: 2rem !important;
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+
+  /* Restore Text Colors for Print Visibility */
+  .text-muted-foreground {
+    color: #4a4a4a !important;
+  }
+
+  .text-accent {
+    color: #1a1a1a !important;
+    font-weight: bold !important;
+  }
+
+  /* Optimize Headings */
+  .h1, .h2, .h3 {
+    color: black !important;
+    page-break-after: avoid;
+  }
+
+  /* Grid & Decorative background removal */
+  .grid-bg, .grid-bg-sm {
+    background-image: none !important;
+  }
+
+  /* Architecture Diagram Simplification */
+  #architecture svg {
+    filter: none !important;
+  }
+  
+  #architecture .backdrop-blur-3xl {
+    backdrop-filter: none !important;
+    background: #f8f8f8 !important;
+    border: 1px solid #ddd !important;
+  }
+
+  /* Container adjustments */
+  .container-px {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    max-width: 100% !important;
+  }
+}
