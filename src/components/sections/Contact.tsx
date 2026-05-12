@@ -105,7 +105,7 @@ export function Contact() {
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="p-8 md:p-12 glass rounded-[3rem] border-foreground/10 relative z-10"
+            className="p-6 sm:p-8 md:p-12 glass rounded-[2rem] sm:rounded-[3rem] border-foreground/10 relative z-10"
           >
             <div className="flex items-center justify-between mb-8">
               <div className="flex items-center gap-2 text-[10px] font-mono text-accent">
@@ -212,7 +212,7 @@ export function Contact() {
       </div>
       
       {/* Background decoration */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-accent/5 blur-[150px] -z-20 rounded-full" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[800px] aspect-square bg-accent/5 blur-[100px] lg:blur-[150px] -z-20 rounded-full opacity-50 lg:opacity-100" />
     </Container>
   );
 }

@@ -14,16 +14,16 @@ interface NodeProps {
 
 function Node({ icon: Icon, label, pos = "", accent = false, isActive = false }: NodeProps) {
   return (
-    <div className={`relative flex flex-col items-center gap-3 z-20 ${pos}`}>
+    <div className={`relative flex flex-col items-center gap-2 sm:gap-3 z-20 ${pos}`}>
       <motion.div
         whileHover={{ scale: 1.05 }}
-        className={`w-16 h-16 rounded-2xl border flex items-center justify-center transition-all duration-500 ${
+        className={`w-12 h-12 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl border flex items-center justify-center transition-all duration-500 ${
           accent
             ? "bg-accent/10 border-accent/30 shadow-[0_10px_30px_rgba(var(--accent),0.1)]"
             : "bg-background border-foreground/10 shadow-xl"
         } ${isActive ? "border-accent ring-2 ring-accent/10" : ""}`}
       >
-        <Icon size={24} className={accent ? "text-accent" : "text-muted-foreground"} />
+        <Icon size={20} className={`sm:w-6 sm:h-6 ${accent ? "text-accent" : "text-muted-foreground"}`} />
 
         {/* Node "Power" Light */}
         <div
@@ -33,7 +33,7 @@ function Node({ icon: Icon, label, pos = "", accent = false, isActive = false }:
         />
       </motion.div>
 
-      <span className="text-[9px] font-mono font-bold uppercase tracking-[0.2em] text-muted-foreground/60">
+      <span className="text-[8px] sm:text-[9px] font-mono font-bold uppercase tracking-[0.1em] sm:tracking-[0.2em] text-muted-foreground/60 text-center whitespace-nowrap">
         {label}
       </span>
     </div>
@@ -79,12 +79,12 @@ export function ArchitectureViz() {
         initial={{ opacity: 0, scale: 0.98 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
-        className="relative aspect-square lg:aspect-[1.2] w-full bg-foreground/[0.02] rounded-[4rem] border border-foreground/5 p-4 lg:p-6 shadow-3xl overflow-hidden"
+        className="relative aspect-[0.8] sm:aspect-square lg:aspect-[1.2] w-full bg-foreground/[0.02] rounded-[2rem] sm:rounded-[4rem] border border-foreground/5 p-3 sm:p-6 shadow-3xl overflow-hidden"
       >
         {/* Internal Visualization Panel */}
-        <div className="absolute inset-4 lg:inset-6 rounded-[3rem] border border-foreground/5 bg-background/40 backdrop-blur-3xl p-12 flex items-center justify-center">
+        <div className="absolute inset-2 sm:inset-6 rounded-[1.5rem] sm:rounded-[3rem] border border-foreground/5 bg-background/40 backdrop-blur-3xl p-4 sm:p-12 flex items-center justify-center">
           {/* Topology Visualization */}
-          <div className="relative w-full h-full max-w-2xl">
+          <div className="relative w-full h-full max-w-2xl scale-[0.85] sm:scale-100">
             <svg
               className="absolute inset-0 w-full h-full pointer-events-none"
               viewBox="0 0 100 100"
@@ -148,8 +148,8 @@ export function ArchitectureViz() {
           </div>
 
           {/* Live Telemetry Panel */}
-          <div className="absolute bottom-10 left-10 right-10 flex justify-between items-end bg-foreground/[0.03] p-6 rounded-3xl border border-foreground/5 backdrop-blur-md">
-            <div className="space-y-3">
+          <div className="absolute bottom-4 sm:bottom-10 left-4 sm:left-10 right-4 sm:right-10 flex flex-col sm:flex-row justify-between items-center sm:items-end bg-foreground/[0.03] p-4 sm:p-6 rounded-2xl sm:rounded-3xl border border-foreground/5 backdrop-blur-md gap-4 sm:gap-0">
+            <div className="space-y-2 sm:space-y-3 w-full sm:w-auto">
               <div className="flex items-center gap-3">
                 <div className="flex gap-1">
                   {[...Array(3)].map((_, i) => (
@@ -161,24 +161,24 @@ export function ArchitectureViz() {
                     />
                   ))}
                 </div>
-                <span className="text-[10px] font-mono uppercase tracking-[0.2em] font-bold text-accent">
+                <span className="text-[9px] sm:text-[10px] font-mono uppercase tracking-[0.2em] font-bold text-accent">
                   System Telemetry
                 </span>
               </div>
               <div className="flex items-center gap-4">
                 <div className="flex items-center gap-2">
                   <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
-                  <span className="text-[9px] font-mono text-muted-foreground uppercase">Production_Live</span>
+                  <span className="text-[8px] sm:text-[9px] font-mono text-muted-foreground uppercase">Production_Live</span>
                 </div>
                 <div className="w-px h-3 bg-foreground/10" />
                 <div className="flex items-center gap-2">
-                  <span className="text-[9px] font-mono text-muted-foreground uppercase">Nodes: 24 Online</span>
+                  <span className="text-[8px] sm:text-[9px] font-mono text-muted-foreground uppercase">24 Nodes Online</span>
                 </div>
               </div>
             </div>
 
-            <div className="flex gap-12">
-              <Metric label="Latency (p99)" value="14ms" color="text-green-500" trend="down" />
+            <div className="flex gap-6 sm:gap-12 w-full sm:w-auto justify-between sm:justify-end border-t sm:border-t-0 border-foreground/5 pt-3 sm:pt-0">
+              <Metric label="Latency" value="14ms" color="text-green-500" trend="down" />
               <Metric label="Throughput" value="128k r/s" color="text-accent" trend="up" />
             </div>
           </div>

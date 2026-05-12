@@ -18,18 +18,22 @@ export const CategoryIcon = ({ category, size = 20 }: { category: string; size?:
 };
 
 export function SystemTopology({ architecture }: { architecture: Project["architecture"] }) {
+  const nodeCount = architecture.nodes.length;
+  const viewBoxWidth = 400;
+  const spacing = (viewBoxWidth - 100) / Math.max(1, nodeCount - 1);
+
   return (
-    <div className="relative h-[240px] flex items-center justify-center overflow-hidden">
-      <svg width="100%" height="100%" viewBox="0 0 400 200" className="max-w-md">
+    <div className="relative h-[180px] sm:h-[240px] flex items-center justify-center overflow-hidden w-full">
+      <svg width="100%" height="100%" viewBox={`0 0 ${viewBoxWidth} 200`} className="max-w-full">
         {/* Connection Lines */}
         {architecture.connections.map((conn, i) => {
           const fromIdx = architecture.nodes.findIndex((n) => n.id === conn.from);
           const toIdx = architecture.nodes.findIndex((n) => n.id === conn.to);
           if (fromIdx === -1 || toIdx === -1) return null;
 
-          const x1 = 50 + fromIdx * 100;
+          const x1 = 50 + fromIdx * spacing;
           const y1 = 100;
-          const x2 = 50 + toIdx * 100;
+          const x2 = 50 + toIdx * spacing;
           const y2 = 100;
 
           return (
@@ -55,19 +59,24 @@ export function SystemTopology({ architecture }: { architecture: Project["archit
             transition={{ delay: i * 0.2 }}
           >
             <circle
-              cx={50 + i * 100}
+              cx={50 + i * spacing}
               cy={100}
               r="12"
               className="fill-card stroke-accent/40"
               strokeWidth="2"
             />
             <text
-              x={50 + i * 100}
+              x={50 + i * spacing}
               y={130}
-              className="fill-muted-foreground text-[10px] font-mono"
+              className="fill-muted-foreground text-[10px] font-mono font-bold"
               textAnchor="middle"
             >
-              {node.label}
+              {node.label.length > 15 ? (
+                <>
+                  <tspan x={50 + i * spacing} dy="0">{node.label.split(' ')[0]}</tspan>
+                  <tspan x={50 + i * spacing} dy="12">{node.label.split(' ').slice(1).join(' ')}</tspan>
+                </>
+              ) : node.label}
             </text>
           </motion.g>
         ))}

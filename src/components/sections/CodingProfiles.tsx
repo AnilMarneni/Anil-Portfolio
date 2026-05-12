@@ -31,7 +31,7 @@ export function CodingProfiles() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.1 }}
-            className="group p-8 rounded-[2rem] border border-foreground/5 bg-background hover:border-accent/20 hover:shadow-xl hover:shadow-accent/5 transition-all flex flex-col"
+            className="group p-6 sm:p-8 rounded-[1.5rem] sm:rounded-[2rem] border border-foreground/5 bg-background hover:border-accent/20 hover:shadow-xl hover:shadow-accent/5 transition-all flex flex-col"
           >
             <div className="flex justify-between items-start mb-6">
               <div className={`p-4 rounded-2xl bg-foreground/[0.03] ${profile.color}`}>

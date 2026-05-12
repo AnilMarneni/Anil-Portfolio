@@ -46,28 +46,26 @@ export function ResumeSection() {
             ))}
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-6 pt-4">
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 pt-4">
             <Magnetic>
               <button
                 onClick={() => setIsModalOpen(true)}
-                className="px-8 py-4 bg-foreground text-background rounded-full font-bold flex items-center gap-2 hover:scale-105 transition-all shadow-xl"
+                className="w-full sm:w-[220px] py-4 bg-foreground text-background rounded-full font-bold flex items-center justify-center gap-2 hover:scale-105 transition-all shadow-xl"
               >
                 <Eye size={18} /> Preview Resume
               </button>
             </Magnetic>
             
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Magnetic>
-                <a
-                  href="/Marneni_Anil_Chiranjeeth_Resume.pdf"
-                  download
-                  className="px-8 py-4 border border-foreground/10 rounded-full font-bold flex items-center gap-2 hover:bg-foreground/5 transition-all group shadow-sm"
-                >
-                  <Download size={18} className="group-hover:-translate-y-1 transition-transform text-accent" /> 
-                  <span>Download CV</span>
-                </a>
-              </Magnetic>
-            </div>
+            <Magnetic>
+              <a
+                href="/Marneni_Anil_Chiranjeeth_Resume.pdf"
+                download
+                className="w-full sm:w-[220px] py-4 border border-foreground/10 rounded-full font-bold flex items-center justify-center gap-2 hover:bg-foreground/5 transition-all group shadow-sm"
+              >
+                <Download size={18} className="group-hover:-translate-y-1 transition-transform text-accent" /> 
+                <span>Download Resume</span>
+              </a>
+            </Magnetic>
           </div>
         </div>
 
@@ -79,7 +77,7 @@ export function ResumeSection() {
             viewport={{ once: true }}
             whileHover={{ rotate: 0, scale: 1.02 }}
             transition={{ duration: 0.8, type: "spring" }}
-            className="relative w-full max-w-md aspect-[1/1.4] bg-white dark:bg-zinc-900 p-8 shadow-[0_20px_50px_rgba(0,0,0,0.1)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.5)] rounded-sm border border-black/5 dark:border-white/10 overflow-hidden group cursor-pointer"
+            className="relative w-full max-w-[min(448px,90vw)] aspect-[1/1.4] bg-white dark:bg-zinc-900 p-8 shadow-[0_20px_50px_rgba(0,0,0,0.1)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.5)] rounded-sm border border-black/5 dark:border-white/10 overflow-hidden group cursor-pointer"
             onClick={() => setIsModalOpen(true)}
           >
             <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.01] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/paper-fibers.png')]" />
@@ -150,7 +148,7 @@ export function ResumeSection() {
             </div>
           </motion.div>
 
-          <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-accent/5 blur-[100px] rounded-full" />
+          <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[500px] aspect-square bg-accent/5 blur-[100px] rounded-full opacity-50 lg:opacity-100" />
         </div>
       </div>
 

@@ -24,42 +24,45 @@ export function Hero() {
   const { handleTap: handleProfileTap } = useProfileTap(5, () => setIsBountyOpen(true));
 
   return (
-    <section className="relative min-h-screen flex flex-col justify-center container-px pt-24 overflow-hidden">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+    <section className="relative min-h-[90vh] lg:min-h-screen flex flex-col justify-center container-px pt-24 lg:pt-32 overflow-hidden">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
         {/* Left Content */}
-        <div className="lg:col-span-7 space-y-8 z-10">
+        <div className="lg:col-span-7 space-y-6 sm:space-y-8 z-10">
           <motion.div {...ANIMATION_VARIANTS.fadeIn}>
-            <span className="ui-label text-accent font-semibold mb-4 block">
+            <span className="ui-label text-accent font-semibold mb-3 sm:mb-4 block">
               {isOverrideActive ? UI_STRINGS.hero.overrideRole : UI_STRINGS.hero.role}
             </span>
-            <h1 className="h1 mb-6">
+            <h1 className="h1 mb-4 sm:mb-6">
               {isOverrideActive ? (
                 <>Building high-performance <span className="text-muted-foreground">distributed architecture</span> that scales.</>
               ) : (
                 <>Designing <span className="text-muted-foreground">scalable systems</span> for high-load applications.</>
               )}
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed">
               {UI_STRINGS.hero.description}
             </p>
           </motion.div>
 
           <motion.div
             {...ANIMATION_VARIANTS.fadeInDelayed}
-            className="space-y-10 pb-12"
+            className="space-y-8 sm:space-y-10 pb-12"
           >
             {/* Primary Actions */}
-            <div className="flex flex-wrap items-center gap-4">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
               <Magnetic strength={0.2}>
-                <button className="px-8 py-4 bg-foreground text-background rounded-full font-medium flex items-center gap-2 hover:scale-105 transition-all shadow-xl hover:shadow-accent/20 active:scale-95">
+                <a 
+                  href="#projects"
+                  className="w-full sm:w-auto px-8 py-4 bg-foreground text-background rounded-full font-medium flex items-center justify-center gap-2 hover:scale-105 transition-all shadow-xl hover:shadow-accent/20 active:scale-95"
+                >
                   View Projects <ArrowUpRight size={18} />
-                </button>
+                </a>
               </Magnetic>
               
               <Magnetic strength={0.2}>
                 <button 
                   onClick={() => setIsModalOpen(true)}
-                  className="px-8 py-4 border border-foreground/10 rounded-full font-medium flex items-center gap-2 hover:bg-foreground/5 transition-all group active:scale-95"
+                  className="w-full sm:w-auto px-8 py-4 border border-foreground/10 rounded-full font-medium flex items-center justify-center gap-2 hover:bg-foreground/5 transition-all group active:scale-95"
                 >
                   <ResumeIcon size={18} className="group-hover:text-accent transition-colors" />
                   Preview Resume
@@ -165,8 +168,8 @@ export function Hero() {
       </div>
 
       {/* Background Decorative Elements */}
-      <div className="absolute top-0 right-0 w-1/3 h-1/2 bg-accent/5 blur-[120px] -z-10 rounded-full" />
-      <div className="absolute bottom-0 left-0 w-1/4 h-1/3 bg-foreground/5 blur-[100px] -z-10 rounded-full" />
+      <div className="absolute top-0 right-0 w-[50%] lg:w-1/3 h-1/2 bg-accent/5 blur-[80px] lg:blur-[120px] -z-10 rounded-full opacity-50 lg:opacity-100" />
+      <div className="absolute bottom-0 left-0 w-[40%] lg:w-1/4 h-1/3 bg-foreground/5 blur-[70px] lg:blur-[100px] -z-10 rounded-full opacity-50 lg:opacity-100" />
     </section>
   );
 }

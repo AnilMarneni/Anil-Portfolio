@@ -91,46 +91,47 @@ export function BountyPoster({ isOpen, onClose }: BountyPosterProps) {
                 stiffness: 100,
                 delay: 0.2 // Minimal delay for punchy feel
             }}
-            className="relative w-full max-w-[480px] aspect-[1/1.4] bg-[#f4e4bc] dark:bg-[#2a241a] p-8 shadow-[0_0_100px_rgba(0,0,0,0.6)] border-[12px] border-[#3d2b1f] overflow-hidden"
+            className="relative w-full max-w-[min(440px,90vw)] aspect-[1/1.45] sm:aspect-[1/1.4] bg-[#f4e4bc] dark:bg-[#2a241a] p-5 sm:p-8 shadow-[0_0_100px_rgba(0,0,0,0.6)] border-[8px] sm:border-[12px] border-[#3d2b1f] overflow-hidden"
           >
             {/* Paper Texture Overlay */}
             <div className="absolute inset-0 opacity-20 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/cardboard.png')]" />
             
             {/* Burnt Edges Effect */}
-            <div className="absolute inset-0 border-[20px] border-transparent shadow-[inset_0_0_100px_rgba(0,0,0,0.4)] pointer-events-none" />
+            <div className="absolute inset-0 border-[10px] sm:border-[20px] border-transparent shadow-[inset_0_0_100px_rgba(0,0,0,0.4)] pointer-events-none" />
 
             <div className="relative h-full flex flex-col items-center text-[#3d2b1f] dark:text-[#f4e4bc]/80">
               {/* Wanted Header */}
-              <div className="w-full text-center mb-6 border-b-4 border-[#3d2b1f] pb-4">
-                <h2 className="text-7xl font-black tracking-tighter uppercase italic">WANTED</h2>
+              <div className="w-full text-center mb-4 sm:mb-6 border-b-2 sm:border-b-4 border-[#3d2b1f] pb-2 sm:pb-4">
+                <h2 className="text-4xl sm:text-7xl font-black tracking-tighter uppercase italic leading-none">WANTED</h2>
               </div>
 
               {/* Portrait Container */}
-              <div className="relative w-full aspect-square border-8 border-[#3d2b1f] bg-[#3d2b1f]/10 overflow-hidden shadow-inner group">
+              <div className="relative w-full aspect-square border-4 sm:border-8 border-[#3d2b1f] bg-[#3d2b1f]/10 overflow-hidden shadow-inner group">
                 <Image
                   src="/images/profile/anil-hero.webp.jpeg"
                   alt="Marneni Anil Chiranjeeth"
                   fill
                   className="object-cover object-top scale-110 sepia-[0.6] contrast-[1.2] brightness-[0.8] grayscale-[0.2]"
+                  sizes="(max-width: 480px) 100vw, 400px"
                 />
                 {/* Infrastructure Overlay on Image */}
                 <div className="absolute inset-0 opacity-10 flex items-center justify-center pointer-events-none">
-                    <Cpu size={120} />
+                    <Cpu className="w-20 h-20 sm:w-[120px] sm:h-[120px]" />
                 </div>
               </div>
 
               {/* Name & Alias */}
-              <div className="w-full mt-8 text-center space-y-1">
-                <h3 className="text-2xl font-bold tracking-widest uppercase">Marneni Anil Chiranjeeth</h3>
-                <p className="text-[10px] font-mono font-black tracking-[0.3em] uppercase opacity-60">“THE DISTRIBUTED ENGINEER”</p>
+              <div className="w-full mt-4 sm:mt-8 text-center space-y-1">
+                <h3 className="text-lg sm:text-2xl font-bold tracking-widest uppercase line-clamp-2 leading-tight">Marneni Anil Chiranjeeth</h3>
+                <p className="text-[8px] sm:text-[10px] font-mono font-black tracking-[0.2em] sm:tracking-[0.3em] uppercase opacity-60">“THE DISTRIBUTED ENGINEER”</p>
               </div>
 
               {/* Bounty Value */}
-              <div className="mt-auto w-full pt-6 flex flex-col items-center border-t-4 border-[#3d2b1f]/20">
-                <div className="flex items-baseline gap-4">
-                  <span className="text-5xl font-black">฿ 930,000,000</span>
+              <div className="mt-auto w-full pt-4 sm:pt-6 flex flex-col items-center border-t-2 sm:border-t-4 border-[#3d2b1f]/20">
+                <div className="flex items-baseline gap-2 sm:gap-4">
+                  <span className="text-3xl sm:text-5xl font-black">฿ 930,000,000</span>
                 </div>
-                <div className="mt-2 text-[8px] font-mono font-bold tracking-widest opacity-40 uppercase">
+                <div className="mt-1 sm:mt-2 text-[7px] sm:text-[8px] font-mono font-bold tracking-widest opacity-40 uppercase text-center">
                     Dead or Alive | Low Latency Threat | Event Driven
                 </div>
               </div>

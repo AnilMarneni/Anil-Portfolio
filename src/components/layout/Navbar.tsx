@@ -65,7 +65,7 @@ export function Navbar() {
           </Link>
         </div>
 
-        <div className="hidden md:flex items-center gap-1">
+        <div className="hidden lg:flex items-center gap-1">
           {navLinks.map((link) => (
             <Link
               key={link.name}
@@ -78,7 +78,7 @@ export function Navbar() {
           ))}
         </div>
 
-        <div className="h-4 w-px bg-foreground/10 mx-2 hidden md:block" />
+        <div className="h-4 w-px bg-foreground/10 mx-2 hidden lg:block" />
 
         <div className="flex items-center gap-1">
           <button
@@ -89,7 +89,7 @@ export function Navbar() {
             {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
           </button>
           
-          <div className="hidden md:flex items-center gap-1">
+          <div className="hidden lg:flex items-center gap-1">
             <a
               href={portfolioData.contact.github}
               target="_blank"
@@ -112,7 +112,7 @@ export function Navbar() {
 
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="p-2 md:hidden transition-colors rounded-full hover:bg-foreground/5"
+            className="p-2 lg:hidden transition-colors rounded-full hover:bg-foreground/5"
             aria-label="Toggle mobile menu"
           >
             {isOpen ? <X size={16} /> : <Menu size={16} />}
@@ -127,7 +127,7 @@ export function Navbar() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.95 }}
-            className="fixed inset-x-6 top-24 z-40 md:hidden p-6 glass rounded-3xl border-foreground/10"
+            className="fixed inset-x-6 top-24 z-40 lg:hidden p-6 glass rounded-3xl border-foreground/10"
           >
             <div className="flex flex-col gap-4">
               {navLinks.map((link) => (

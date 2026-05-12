@@ -25,18 +25,18 @@ const principles = [
 
 export function ArchitectureShowcase() {
   return (
-    <Container id="architecture" className="py-48 relative overflow-hidden bg-background">
+    <Container id="architecture" className="py-20 md:py-48 relative overflow-hidden bg-background">
       {/* Technical Blueprint Overlay */}
       <div className="absolute inset-0 pointer-events-none opacity-[0.03] dark:opacity-[0.07] overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full grid-bg-sm" />
       </div>
 
       <div className="relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-24 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center">
           
           {/* Left Column: Engineering Philosophy */}
-          <div className="lg:col-span-5 space-y-16">
-            <div className="space-y-8">
+          <div className="lg:col-span-5 space-y-12 lg:space-y-16">
+            <div className="space-y-6 sm:space-y-8">
               <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-accent/5 border border-accent/10">
                 <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
                 <span className="text-[10px] font-mono font-bold uppercase tracking-[0.25em] text-accent">Signature Engineering</span>
@@ -54,7 +54,7 @@ export function ArchitectureShowcase() {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.3 }}
-                className="space-y-8 text-xl text-muted-foreground/80 leading-relaxed max-w-xl"
+                className="space-y-6 sm:space-y-8 text-lg sm:text-xl text-muted-foreground/80 leading-relaxed max-w-xl"
               >
                 <p>
                   I believe great software isn&apos;t just about features—it&apos;s about how it handles pressure. I focus on building backend architecture that&apos;s clean, efficient, and ready to scale without breaking.
@@ -66,9 +66,9 @@ export function ArchitectureShowcase() {
             </div>
 
             {/* Principles Panel */}
-            <div className="space-y-8">
-              <h4 className="text-[10px] font-mono font-bold uppercase tracking-[0.3em] text-muted-foreground/60">Core Engineering Principles</h4>
-              <div className="grid grid-cols-2 gap-4">
+            <div className="space-y-6 sm:space-y-8">
+              <h4 className="text-[10px] font-mono font-bold uppercase tracking-[0.3em] text-muted-foreground/60 text-center sm:text-left">Core Engineering Principles</h4>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {principles.map((p, i) => (
                   <motion.div
                     key={p.name}
@@ -89,11 +89,11 @@ export function ArchitectureShowcase() {
           </div>
 
           {/* Right Column: Advanced Architecture Visualization */}
-          <div className="lg:col-span-7 space-y-10">
+          <div className="lg:col-span-7 space-y-8 lg:space-y-10">
             <ArchitectureViz />
 
             {/* Architectural Status Legend */}
-            <div className="grid grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
                 {[
                     { label: "Durability", value: "99.999%", icon: Shield },
                     { label: "Isolation", value: "L3 / Mesh", icon: Box },

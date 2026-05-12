@@ -25,9 +25,9 @@ export function ProjectCard({ project }: { project: Project }) {
     <motion.div
       ref={containerRef}
       style={{ opacity }}
-      className="relative py-24 border-b border-foreground/5 last:border-0"
+      className="relative py-16 md:py-24 border-b border-foreground/5 last:border-0"
     >
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
         
         {/* Left Column - Content & Technical Deep Dive */}
         <div className="lg:col-span-5 space-y-12 order-1">
@@ -44,9 +44,9 @@ export function ProjectCard({ project }: { project: Project }) {
               <span className="ui-label tracking-[0.2em]">{project.category.replace('-', ' ')}</span>
             </div>
             
-            <h3 className="h2 text-5xl lg:text-6xl">{project.title}</h3>
+            <h3 className="h2">{project.title}</h3>
             
-            <p className="text-xl text-muted-foreground leading-relaxed">
+            <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
               {project.longDescription}
             </p>
           </motion.div>
@@ -124,8 +124,8 @@ export function ProjectCard({ project }: { project: Project }) {
         <div className="lg:col-span-7 space-y-12 order-2">
           {/* Cinematic Poster Showcase */}
           <motion.div
-            style={{ y }}
-            className="relative aspect-[16/10] rounded-[2.5rem] overflow-hidden group cursor-none shadow-2xl transition-all duration-500 hover:shadow-accent/20"
+            style={{ y: typeof window !== 'undefined' && window.innerWidth > 1024 ? y : 0 }}
+            className="relative aspect-[16/10] sm:aspect-video lg:aspect-[16/10] rounded-[1.5rem] sm:rounded-[2.5rem] overflow-hidden group cursor-none shadow-2xl transition-all duration-500 hover:shadow-accent/20"
           >
             <Image
               src={project.poster}
@@ -133,10 +133,11 @@ export function ProjectCard({ project }: { project: Project }) {
               fill
               className="object-cover transition-transform duration-700 group-hover:scale-105"
               priority
+              sizes="(max-width: 768px) 100vw, 50vw"
             />
             
             {/* Animated Border Glow */}
-            <div className="absolute inset-0 rounded-[2.5rem] border-[1px] border-white/10 group-hover:border-accent/40 transition-colors duration-500 z-20" />
+            <div className="absolute inset-0 rounded-[1.5rem] sm:rounded-[2.5rem] border-[1px] border-white/10 group-hover:border-accent/40 transition-colors duration-500 z-20" />
             
             {/* Interactive Overlays based on project category */}
             <div className="absolute inset-0 z-10 pointer-events-none overflow-hidden">
@@ -161,7 +162,7 @@ export function ProjectCard({ project }: { project: Project }) {
           </motion.div>
  
           {/* Interactive Architecture Visualization */}
-          <div className="p-8 rounded-[2rem] bg-card/50 border border-foreground/5 backdrop-blur-sm space-y-8">
+          <div className="p-6 sm:p-8 rounded-[1.5rem] sm:rounded-[2rem] bg-card/50 border border-foreground/5 backdrop-blur-sm space-y-6 sm:space-y-8">
             <div className="flex items-center justify-between">
               <h4 className="text-sm font-mono uppercase tracking-widest text-muted-foreground flex items-center gap-2">
                 <Network size={16} /> System Topology
@@ -174,13 +175,13 @@ export function ProjectCard({ project }: { project: Project }) {
  
             <SystemTopology architecture={project.architecture} />
  
-            <div className="grid grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
                <div>
-                  <span className="text-[10px] font-mono text-accent uppercase tracking-wider mb-2 block">Primary Bottleneck</span>
+                  <span className="text-[10px] font-mono text-accent uppercase tracking-wider mb-1 sm:mb-2 block">Primary Bottleneck</span>
                   <p className="text-sm text-muted-foreground">{project.challenges[0]}</p>
                </div>
                <div>
-                  <span className="text-[10px] font-mono text-accent uppercase tracking-wider mb-2 block">Architecture Pattern</span>
+                  <span className="text-[10px] font-mono text-accent uppercase tracking-wider mb-1 sm:mb-2 block">Architecture Pattern</span>
                   <p className="text-sm text-muted-foreground">{project.architecture.description}</p>
                </div>
             </div>
