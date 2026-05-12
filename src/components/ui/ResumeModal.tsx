@@ -90,12 +90,12 @@ export function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
             </div>
 
             {/* Viewer */}
-            <div className="flex-1 bg-muted/30 overflow-hidden flex flex-col items-center">
-              <div className="w-full h-full sm:p-8 flex justify-center">
-                <div className="w-full max-w-4xl bg-white shadow-lg sm:rounded-sm overflow-hidden h-full">
+            <div className="flex-1 bg-muted/30 overflow-y-auto flex flex-col items-center custom-scrollbar">
+              <div className="w-full flex justify-center p-0 sm:p-8 min-h-full">
+                <div className="w-full max-w-4xl bg-white shadow-lg sm:rounded-sm overflow-hidden min-h-[1200px] sm:min-h-[1600px] h-auto lg:h-full">
                   <iframe
                     src="/Marneni_Anil_Chiranjeeth_Resume.pdf#view=FitH"
-                    className="w-full h-full border-none"
+                    className="w-full h-[1200px] sm:h-[1600px] lg:h-full border-none"
                     title="Resume PDF"
                   />
                 </div>
