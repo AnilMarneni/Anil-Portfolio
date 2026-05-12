@@ -30,7 +30,7 @@ export function ProjectCard({ project }: { project: Project }) {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
         
         {/* Left Column - Content & Technical Deep Dive */}
-        <div className="lg:col-span-5 space-y-12 order-2 lg:order-1">
+        <div className="lg:col-span-5 space-y-12 order-1">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -121,7 +121,7 @@ export function ProjectCard({ project }: { project: Project }) {
         </div>
  
         {/* Right Column - Poster & Architecture Viz */}
-        <div className="lg:col-span-7 space-y-12 order-1 lg:order-2">
+        <div className="lg:col-span-7 space-y-12 order-2">
           {/* Cinematic Poster Showcase */}
           <motion.div
             style={{ y }}
