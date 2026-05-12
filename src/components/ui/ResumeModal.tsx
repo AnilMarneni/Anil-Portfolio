@@ -50,22 +50,22 @@ export function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
             className="relative w-full max-w-5xl h-[90vh] bg-card border border-foreground/10 rounded-3xl shadow-2xl overflow-hidden flex flex-col"
           >
             {/* Header */}
-            <div className="flex items-center justify-between p-4 md:p-6 border-b border-foreground/5 bg-card/50 backdrop-blur-md">
-              <div className="flex items-center gap-3">
-                <div className="p-2 bg-accent/10 rounded-lg text-accent">
+            <div className="flex items-center justify-between p-4 md:p-6 border-b border-foreground/5 bg-card/50 backdrop-blur-md shrink-0">
+              <div className="flex items-center gap-3 min-w-0">
+                <div className="p-2 bg-accent/10 rounded-lg text-accent shrink-0">
                   <FileText size={20} />
                 </div>
-                <div>
-                  <h3 className="font-semibold text-foreground">Resume Preview</h3>
-                  <p className="text-xs text-muted-foreground">Marneni_Anil_Chiranjeeth_Resume.pdf</p>
+                <div className="min-w-0">
+                  <h3 className="font-semibold text-foreground truncate">Resume Preview</h3>
+                  <p className="text-[10px] sm:text-xs text-muted-foreground truncate">Marneni_Anil_Resume.pdf</p>
                 </div>
               </div>
 
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-1 sm:gap-2 shrink-0 ml-4">
                 <a
                   href="/Marneni_Anil_Chiranjeeth_Resume.pdf"
                   download="Marneni_Anil_Chiranjeeth_Resume.pdf"
-                  className="p-2.5 hover:bg-foreground/5 rounded-full transition-colors text-muted-foreground hover:text-foreground"
+                  className="p-2 sm:p-2.5 hover:bg-foreground/5 rounded-full transition-colors text-muted-foreground hover:text-foreground hidden sm:block"
                   title="Download Resume"
                 >
                   <Download size={20} />
@@ -73,15 +73,15 @@ export function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
                 <a
                   href="/Marneni_Anil_Chiranjeeth_Resume.pdf"
                   target="_blank"
-                  className="p-2.5 hover:bg-foreground/5 rounded-full transition-colors text-muted-foreground hover:text-foreground"
+                  className="p-2 sm:p-2.5 hover:bg-foreground/5 rounded-full transition-colors text-muted-foreground hover:text-foreground"
                   title="Open in New Tab"
                 >
                   <ExternalLink size={20} />
                 </a>
-                <div className="w-px h-6 bg-foreground/10 mx-2" />
+                <div className="w-px h-6 bg-foreground/10 mx-1 sm:mx-2" />
                 <button
                   onClick={onClose}
-                  className="p-2.5 hover:bg-foreground/5 rounded-full transition-colors text-muted-foreground hover:text-foreground"
+                  className="p-2 sm:p-2.5 hover:bg-foreground/5 rounded-full transition-colors text-muted-foreground hover:text-foreground"
                   aria-label="Close modal"
                 >
                   <X size={20} />
@@ -90,22 +90,30 @@ export function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
             </div>
 
             {/* Viewer */}
-            <div className="flex-1 bg-muted/30 overflow-auto p-4 md:p-8 flex justify-center">
-              <div className="w-full max-w-4xl bg-white shadow-lg rounded-sm overflow-hidden min-h-[1100px]">
-                <iframe
-                  src="/Marneni_Anil_Chiranjeeth_Resume.pdf#toolbar=0"
-                  className="w-full h-full border-none min-h-[1100px]"
-                  title="Resume PDF"
-                />
+            <div className="flex-1 bg-muted/30 overflow-hidden flex flex-col items-center">
+              <div className="w-full h-full sm:p-8 flex justify-center">
+                <div className="w-full max-w-4xl bg-white shadow-lg sm:rounded-sm overflow-hidden h-full">
+                  <iframe
+                    src="/Marneni_Anil_Chiranjeeth_Resume.pdf#view=FitH"
+                    className="w-full h-full border-none"
+                    title="Resume PDF"
+                  />
+                </div>
               </div>
             </div>
             
             {/* Mobile Footer (visible only on small screens) */}
-            <div className="md:hidden p-4 border-t border-foreground/5 bg-card/50 flex gap-2">
+            <div className="sm:hidden p-4 border-t border-foreground/5 bg-card/50 flex gap-3">
+                <button
+                  onClick={onClose}
+                  className="flex-1 py-3 border border-foreground/10 rounded-xl font-medium flex items-center justify-center gap-2"
+                >
+                  Close
+                </button>
                 <a
                   href="/Marneni_Anil_Chiranjeeth_Resume.pdf"
                   download="Marneni_Anil_Chiranjeeth_Resume.pdf"
-                  className="flex-1 py-3 bg-foreground text-background rounded-xl font-medium flex items-center justify-center gap-2"
+                  className="flex-[2] py-3 bg-foreground text-background rounded-xl font-medium flex items-center justify-center gap-2 shadow-lg active:scale-[0.98] transition-transform"
                 >
                   <Download size={18} /> Download
                 </a>
