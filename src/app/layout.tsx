@@ -21,14 +21,14 @@ const mono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Marneni Anil Chiranjeeth | Software Development Engineer",
-  description: "Professional portfolio of Marneni Anil Chiranjeeth, a Software Development Engineer specializing in Distributed Systems, Backend Engineering, and AI-integrated systems. Explore projects in isolated code execution and real-time monitoring.",
-  keywords: ["Software Engineer", "Backend Developer", "Distributed Systems", "Go", "Python", "Kubernetes", "Kafka", "Real-time Systems"],
+  title: "Marneni Anil Chiranjeeth | Backend & Systems-Oriented Developer",
+  description: "Professional portfolio of Marneni Anil Chiranjeeth, a backend-focused systems-oriented student engineer. Explore projects in distributed caching architectures, real-time telemetry pipelines, and AI benchmark tools.",
+  keywords: ["Software Engineer", "Backend Developer", "Systems Engineering", "Node.js", "Express.js", "Redis", "BullMQ", "FastAPI", "MongoDB", "PostgreSQL", "Docker", "MERN Stack"],
   authors: [{ name: "Marneni Anil Chiranjeeth" }],
   creator: "Marneni Anil Chiranjeeth",
   openGraph: {
-    title: "Marneni Anil Chiranjeeth | Systems Engineering Portfolio",
-    description: "Building scalable distributed systems and robust backend architecture.",
+    title: "Marneni Anil Chiranjeeth | Backend & Systems Portfolio",
+    description: "Building modular, production-inspired backend systems and real-time workflows.",
     url: "https://anilmarneni.com",
     siteName: "Anil Chiranjeeth Portfolio",
     images: [
@@ -44,8 +44,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Marneni Anil Chiranjeeth | Software Engineer",
-    description: "Backend & Distributed Systems Portfolio",
+    title: "Marneni Anil Chiranjeeth | Backend Developer",
+    description: "Backend & Systems-Oriented Developer Portfolio",
     images: ["/images/og-image.jpg"],
   },
   robots: {
