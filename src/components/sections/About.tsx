@@ -37,8 +37,8 @@ export function About() {
           <div className="lg:col-span-7 space-y-6 sm:space-y-8 order-1 lg:order-2">
             <SectionHeader 
                 label="About Me"
-                title="Building software that"
-                subtitle="scales and stays reliable."
+                title="Building backends with"
+                subtitle="clean code and scalable designs."
                 className="mb-0"
             />
             
@@ -67,7 +67,7 @@ export function About() {
                         <span className="text-xs sm:text-sm uppercase tracking-wider">Core Focus</span>
                     </div>
                     <p className="text-sm text-muted-foreground leading-relaxed">
-                        Scalable Backend Development, MERN Stack Architectures, and systems-oriented workflows.
+                        Backend Engineering, MERN Stack Development, and caching/queue workflows.
                     </p>
                 </div>
 

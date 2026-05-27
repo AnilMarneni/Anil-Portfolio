@@ -32,7 +32,7 @@ export function ResumeSection() {
             label="Career Ledger"
             title="Architecture of"
             subtitle="Experience."
-            description="A summary of my engineering journey, technical foundations, and the systems I've built. Designed for clarity and impact."
+            description="A summary of my backend projects, skills, and internship experience."
             className="mb-0"
           />
 

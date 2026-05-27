@@ -34,9 +34,9 @@ export function Hero() {
             </span>
             <h1 className="h1 mb-4 sm:mb-6">
               {isOverrideActive ? (
-                <>Building high-performance <span className="text-muted-foreground">distributed architecture</span> that scales.</>
+                <>Designing <span className="text-muted-foreground">backend systems</span> and real-time workflows.</>
               ) : (
-                <>Designing <span className="text-muted-foreground">scalable systems</span> for high-load applications.</>
+                <>Building <span className="text-muted-foreground">scalable backends</span> and clean APIs.</>
               )}
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed">

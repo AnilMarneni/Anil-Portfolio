@@ -18,7 +18,7 @@ export function Footer() {
             {portfolioData.name.toUpperCase()}<span className="text-accent">.</span>
           </Link>
           <p className="text-sm text-muted-foreground max-w-xs leading-relaxed">
-            Designing and building modular, scalable backend systems with a focus on systems-oriented clean architectures.
+            Building backend applications, real-time systems, and clean web APIs.
           </p>
         </div>
 

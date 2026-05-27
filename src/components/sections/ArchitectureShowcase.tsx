@@ -44,8 +44,8 @@ export function ArchitectureShowcase() {
               
               <SectionHeader 
                 label="Engineering Philosophy"
-                title="Systems that"
-                subtitle="Scale, Built to last under load."
+                title="Backends designed for"
+                subtitle="reliability and clean architecture."
                 className="mb-0"
               />
               
@@ -57,10 +57,10 @@ export function ArchitectureShowcase() {
                 className="space-y-6 sm:space-y-8 text-lg sm:text-xl text-muted-foreground/80 leading-relaxed max-w-xl"
               >
                 <p>
-                  I believe great software isn&apos;t just about features—it&apos;s about how it handles pressure. I focus on building backend architecture that&apos;s clean, efficient, and ready to scale without breaking.
+                  I believe writing good backend code is about structure and reliability. I focus on building backend architectures that are clean, easy to read, and ready to handle traffic increase efficiently.
                 </p>
                 <p>
-                  Whether I&apos;m working on a distributed execution engine or a real-time data pipeline, my goal is always the same: creating systems that are reliable, fast, and easy to maintain.
+                  Whether I&apos;m setting up asynchronous task queues or linking a database to real-time events, my goal is always the same: building practical systems that work reliably and are easy to maintain.
                 </p>
               </motion.div>
             </div>

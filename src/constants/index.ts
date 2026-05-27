@@ -20,16 +20,16 @@ export const ANIMATION_VARIANTS: Record<string, HTMLMotionProps<"div">> = {
 
 export const UI_STRINGS = {
   hero: {
-    role: "Backend & Systems-Focused Developer",
+    role: "Backend & Web Developer",
     overrideRole: "SYSTEM_OVERRIDE_ACTIVE",
     title: "Building scalable backend systems and real-time web applications.",
-    overrideTitle: "Designing production-inspired backend architectures and workflows.",
-    description: "I'm a backend-focused student engineer passionate about building clean APIs, caching layer workflows, and scalable systems. I love translating database designs and distributed concepts into practical software.",
+    overrideTitle: "Designing practical backend architectures and workflows.",
+    description: "I'm a final-year student developer focused on backend engineering. I enjoy building backend applications, real-time web workflows, and clean APIs using MERN, Redis, and FastAPI.",
   },
   system: {
     statusActive: "System Status: Active",
     statusOverride: "CORE_STATUS: OVERRIDE",
-    descriptionActive: "Calibrating backend workflows for local container environments.",
-    descriptionOverride: "Executing asynchronous task events across containerized worker nodes.",
+    descriptionActive: "Running containerized local workflows and backend test suites.",
+    descriptionOverride: "Executing async background tasks across active containers.",
   }
 };
