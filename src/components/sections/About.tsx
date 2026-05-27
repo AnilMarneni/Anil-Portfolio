@@ -50,10 +50,10 @@ export function About() {
                 className="space-y-4 sm:space-y-6 text-base sm:text-lg text-muted-foreground leading-relaxed"
             >
                 <p>
-                    I&apos;m {portfolioData.name}, a backend engineer who loves figuring out how to make software faster and more reliable at scale. I spend most of my time thinking about distributed systems, real-time data flow, and how to build infrastructure that doesn&apos;t break under pressure.
+                    I&apos;m {portfolioData.name}, a final-year B.Tech student majoring in Artificial Intelligence & Data Science, with a deep interest in backend engineering and scalable systems. I love understanding how modern web backends operate, optimizing database queries, and exploring distributed system concepts like asynchronous message queues and caching.
                 </p>
                 <p>
-                    Currently pursuing my engineering degree at {portfolioData.college}, I focus on building practical, high-performance systems. Whether it&apos;s a code execution engine or a real-time messaging pipeline, I enjoy the challenge of making complex backend logic feel seamless.
+                    Currently pursuing my engineering degree at {portfolioData.college}, I focus on building modular backend architectures using the MERN stack alongside tools like Redis and FastAPI. I enjoy translating system design theory into operational projects—like a cache-first URL shortener or a sandboxed code execution pipeline.
                 </p>
             </motion.div>
 
@@ -67,7 +67,7 @@ export function About() {
                         <span className="text-xs sm:text-sm uppercase tracking-wider">Core Focus</span>
                     </div>
                     <p className="text-sm text-muted-foreground leading-relaxed">
-                        Distributed Systems, Backend Architecture, and Real-Time Infrastructure.
+                        Scalable Backend Development, MERN Stack Architectures, and systems-oriented workflows.
                     </p>
                 </div>
 
