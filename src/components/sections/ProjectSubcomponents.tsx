@@ -19,7 +19,7 @@ export const CategoryIcon = ({ category, size = 20 }: { category: string; size?:
 
 export function SystemTopology({ architecture }: { architecture: Project["architecture"] }) {
   const nodeCount = architecture.nodes.length;
-  const viewBoxWidth = 400;
+  const viewBoxWidth = 500;
   const spacing = (viewBoxWidth - 100) / Math.max(1, nodeCount - 1);
 
   return (
@@ -71,12 +71,15 @@ export function SystemTopology({ architecture }: { architecture: Project["archit
               className="fill-muted-foreground text-[10px] font-mono font-bold"
               textAnchor="middle"
             >
-              {node.label.length > 15 ? (
-                <>
-                  <tspan x={50 + i * spacing} dy="0">{node.label.split(' ')[0]}</tspan>
-                  <tspan x={50 + i * spacing} dy="12">{node.label.split(' ').slice(1).join(' ')}</tspan>
-                </>
-              ) : node.label}
+              {node.label.split(' ').map((word, wordIdx) => (
+                <tspan 
+                  key={wordIdx} 
+                  x={50 + i * spacing} 
+                  dy={wordIdx === 0 ? "0" : "12"}
+                >
+                  {word}
+                </tspan>
+              ))}
             </text>
           </motion.g>
         ))}
