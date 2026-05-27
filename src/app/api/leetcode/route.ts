@@ -3,6 +3,12 @@ import { portfolioData } from "@/data/portfolio";
 
 export const revalidate = 21600; // Cache the route for 6 hours
 
+interface SubmissionNum {
+  difficulty: string;
+  count: number;
+  submissions: number;
+}
+
 const QUERY = `
 query userProfile($username: String!) {
   matchedUser(username: $username) {
@@ -72,16 +78,16 @@ export async function GET() {
     }
 
     const { matchedUser, userContestRanking } = data;
-    const acSub = matchedUser.submitStats.acSubmissionNum;
-    const totalSub = matchedUser.submitStats.totalSubmissionNum;
+    const acSub = matchedUser.submitStats.acSubmissionNum as SubmissionNum[];
+    const totalSub = matchedUser.submitStats.totalSubmissionNum as SubmissionNum[];
 
-    const solvedAll = acSub.find((s: any) => s.difficulty === "All")?.count || 0;
-    const easyAll = acSub.find((s: any) => s.difficulty === "Easy")?.count || 0;
-    const medAll = acSub.find((s: any) => s.difficulty === "Medium")?.count || 0;
-    const hardAll = acSub.find((s: any) => s.difficulty === "Hard")?.count || 0;
+    const solvedAll = acSub.find((s) => s.difficulty === "All")?.count || 0;
+    const easyAll = acSub.find((s) => s.difficulty === "Easy")?.count || 0;
+    const medAll = acSub.find((s) => s.difficulty === "Medium")?.count || 0;
+    const hardAll = acSub.find((s) => s.difficulty === "Hard")?.count || 0;
 
-    const acAllSub = acSub.find((s: any) => s.difficulty === "All")?.submissions || 0;
-    const totalAllSub = totalSub.find((s: any) => s.difficulty === "All")?.submissions || 0;
+    const acAllSub = acSub.find((s) => s.difficulty === "All")?.submissions || 0;
+    const totalAllSub = totalSub.find((s) => s.difficulty === "All")?.submissions || 0;
     const acceptanceRateNum = totalAllSub > 0 ? (acAllSub / totalAllSub) * 100 : 0;
 
     const dynamicStats = {
@@ -106,7 +112,7 @@ export async function GET() {
     };
 
     return NextResponse.json(dynamicStats);
-  } catch (error: any) {
+  } catch (error) {
     console.error("Error fetching LeetCode stats:", error);
     // Graceful fallback to static data
     return NextResponse.json(portfolioData.leetcodeStats);

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 /**
  * Animates a numeric value from its current state to a target value using requestAnimationFrame.
@@ -12,10 +12,11 @@ export function useAnimatedNumber(
   duration: number = 1000
 ) {
   const [displayValue, setDisplayValue] = useState(value);
+  const prevValueRef = useRef(value);
 
   useEffect(() => {
     let startTimestamp: number | null = null;
-    const startValue = displayValue;
+    const startValue = prevValueRef.current;
     const endValue = value;
 
     if (startValue === endValue) return;
@@ -31,11 +32,16 @@ export function useAnimatedNumber(
 
       if (progress < 1) {
         window.requestAnimationFrame(step);
+      } else {
+        prevValueRef.current = endValue;
       }
     };
 
     const animId = window.requestAnimationFrame(step);
-    return () => window.cancelAnimationFrame(animId);
+    return () => {
+      window.cancelAnimationFrame(animId);
+      prevValueRef.current = endValue;
+    };
   }, [value, duration]);
 
   return decimals === 0 ? Math.floor(displayValue) : Number(displayValue.toFixed(decimals));
