@@ -132,7 +132,7 @@ export function BountyPoster({ isOpen, onClose }: BountyPosterProps) {
                   <span className="text-3xl sm:text-5xl font-black">฿ 930,000,000</span>
                 </div>
                 <div className="mt-1 sm:mt-2 text-[7px] sm:text-[8px] font-mono font-bold tracking-widest opacity-40 uppercase text-center">
-                    Dead or Alive | Low Latency Threat | Event Driven
+                    Dead or Alive | Systems Builder | B.Tech Student
                 </div>
               </div>
 

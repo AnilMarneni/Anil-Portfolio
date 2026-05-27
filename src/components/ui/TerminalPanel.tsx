@@ -29,16 +29,16 @@ export function TerminalPanel({ onClose }: TerminalPanelProps) {
         resp = "Available commands: help, whoami, projects, architecture, skills, resume, uptime, system-status, coffee, clear";
         break;
       case "whoami":
-        resp = "Marneni Anil Chiranjeeth | Distributed Systems Engineer | low-latency threat detected.";
+        resp = "Marneni Anil Chiranjeeth | Backend & Systems-Oriented Developer | final-year B.Tech.";
         break;
       case "uptime":
-        resp = "Production System Uptime: 1,422 hours without incident.";
+        resp = "Development Server Uptime: 72 hours. All local containers running stable.";
         break;
       case "projects":
-        resp = "Initializing project manifest... [Distributed Code Execution Engine], [Real-Time Transaction Monitor]. Navigate to #projects for deep dive.";
+        resp = "Initializing project manifest... [Distributed URL Shortener Platform], [NEURO-SIG Fraud Detection]. Navigate to #projects for deep dive.";
         break;
       case "architecture":
-        resp = "Visualizing distributed mesh grid... [Ingress] -> [Compute] -> [Data] -> [Observability]. Check #architecture for the live viz.";
+        resp = "Visualizing backend pipeline... [Ingress] -> [Redis Cache] -> [BullMQ Workers] -> [PostgreSQL]. Check #architecture for the live viz.";
         break;
       case "resume":
         resp = "Accessing Career Ledger... One-Page CV available for download at #resume.";
