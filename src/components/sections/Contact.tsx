@@ -61,7 +61,7 @@ export function Contact() {
             label="Get in touch"
             title="Let's talk about"
             subtitle="engineering."
-            description="Whether you want to discuss backend architecture, a new project, or just talk shop about distributed systems, I'm always open to connecting."
+            description="Whether it’s backend engineering, scalable systems, open-source, or just interesting tech conversations, I’m always open to connecting."
             className="mb-12"
           />
           
