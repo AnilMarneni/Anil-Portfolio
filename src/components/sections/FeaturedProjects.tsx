@@ -10,12 +10,12 @@ export function FeaturedProjects() {
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-20">
         <SectionHeader 
           label="Selected Works"
-          title="Production-grade systems"
-          subtitle="engineered for scale."
+          title="Production-inspired backends"
+          subtitle="focused on scalability."
           className="mb-0" // Reset margin since container has gap
         />
         <p className="text-muted-foreground max-w-sm mb-6 md:mb-2">
-          A collection of distributed engines, real-time pipelines, and AI-integrated infrastructure focusing on reliability and performance.
+          A collection of backend systems, real-time workflows, and AI benchmark experiments focusing on reliability and clean architecture.
         </p>
       </div>
 
