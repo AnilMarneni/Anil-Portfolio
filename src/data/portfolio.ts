@@ -73,19 +73,13 @@ export const portfolioData: PortfolioData = {
       architecture: {
         description: "Cache-first redirection routing backed by asynchronous queue workers.",
         nodes: [
-          { id: "nginx", label: "Nginx Ingress", type: "ingress" },
           { id: "api-server", label: "Shortener API", type: "service" },
           { id: "redis-cache", label: "Redis Cache", type: "cache" },
-          { id: "bullmq", label: "BullMQ Queue", type: "queue" },
-          { id: "worker-pool", label: "Analytics Workers", type: "compute" },
           { id: "postgres", label: "PostgreSQL DB", type: "storage" },
         ],
         connections: [
-          { from: "nginx", to: "api-server", label: "Redirection Request" },
           { from: "api-server", to: "redis-cache", label: "Check Cache" },
-          { from: "api-server", to: "bullmq", label: "Enqueue Telemetry" },
-          { from: "bullmq", to: "worker-pool", label: "Process Analytics" },
-          { from: "worker-pool", to: "postgres", label: "Persist Stats" },
+          { from: "api-server", to: "postgres", label: "Persist Stats" },
         ],
       },
       poster: "/images/projects/url-shortener.webp",
