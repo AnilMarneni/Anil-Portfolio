@@ -21,15 +21,15 @@ export function TelemetryOverlays({ isActive }: TelemetryOverlaysProps) {
       <div className="absolute top-24 left-8 space-y-4 opacity-40">
         <div className="flex items-center gap-2 text-[10px] font-mono text-accent">
           <Activity size={12} className="animate-pulse" />
-          <span>PACKET_FLOW: 1.2GB/s</span>
+          <span>REQUEST_RATE: 4.2k/s</span>
         </div>
         <div className="flex items-center gap-2 text-[10px] font-mono text-accent">
           <Database size={12} />
-          <span>REPLICA_LAG: 14ms</span>
+          <span>CACHE_HIT_RATE: 94.2%</span>
         </div>
         <div className="flex items-center gap-2 text-[10px] font-mono text-accent">
           <Network size={12} />
-          <span>NODES_ACTIVE: 128</span>
+          <span>CONTAINERS_ACTIVE: 6</span>
         </div>
       </div>
 

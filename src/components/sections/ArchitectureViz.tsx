@@ -133,7 +133,7 @@ export function ArchitectureViz() {
                 <Node id="api" icon={Server} label="Compute" isActive={activeNode === "api"} />
               </div>
               <div className="absolute left-[35%] top-[50%] -translate-x-1/2 -translate-y-1/2">
-                <Node id="event-bus" icon={Zap} label="Kafka" isActive={activeNode === "event-bus"} />
+                <Node id="event-bus" icon={Zap} label="BullMQ" isActive={activeNode === "event-bus"} />
               </div>
               <div className="absolute left-[60%] top-[20%] -translate-x-1/2 -translate-y-1/2">
                 <Node id="cache" icon={Box} label="Redis" isActive={activeNode === "cache"} />
@@ -172,14 +172,14 @@ export function ArchitectureViz() {
                 </div>
                 <div className="w-px h-3 bg-foreground/10" />
                 <div className="flex items-center gap-2">
-                  <span className="text-[8px] sm:text-[9px] font-mono text-muted-foreground uppercase">24 Nodes Online</span>
+                  <span className="text-[8px] sm:text-[9px] font-mono text-muted-foreground uppercase">6 Containers Active</span>
                 </div>
               </div>
             </div>
 
             <div className="flex gap-6 sm:gap-12 w-full sm:w-auto justify-between sm:justify-end border-t sm:border-t-0 border-foreground/5 pt-3 sm:pt-0">
               <Metric label="Latency" value="14ms" color="text-green-500" trend="down" />
-              <Metric label="Throughput" value="128k r/s" color="text-accent" trend="up" />
+              <Metric label="Throughput" value="4.8k req/s" color="text-accent" trend="up" />
             </div>
           </div>
         </div>
