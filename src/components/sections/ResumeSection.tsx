@@ -15,7 +15,7 @@ const tags = [
   { name: "AI-integrated Platforms", icon: Sparkles },
   { name: "Real-Time Systems", icon: Layers },
   { name: "Event-Driven Architecture", icon: CheckCircle2 },
-  { name: "Kafka & Redis", icon: CheckCircle2 },
+  { name: "Redis & Async Workflows", icon: CheckCircle2 },
   { name: "System Design", icon: CheckCircle2 },
   { name: "Open Source Contributor", icon: CheckCircle2 },
 ];
@@ -129,7 +129,7 @@ export function ResumeSection() {
                 <div className="space-y-1">
                   <h4 className="text-[10px] font-bold uppercase tracking-wider text-accent/80">Technical Skills</h4>
                   <div className="flex flex-wrap gap-x-3 gap-y-1">
-                    {["C++", "Java", "Python", "Node.js", "Docker", "Kafka", "PostgreSQL", "Redis"].map(skill => (
+                    {["C++", "Java", "Python", "Node.js", "Docker", "Redis", "BullMQ", "PostgreSQL", "MongoDB"].map(skill => (
                       <span key={skill} className="text-[9px] font-semibold opacity-70">{skill}</span>
                     ))}
                   </div>
